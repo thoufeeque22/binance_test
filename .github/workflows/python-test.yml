@@ -14,10 +14,10 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4  # Updated to v4 (latest)
 
     - name: Set up Python
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v5  # Updated to v5 (latest)
       with:
         python-version: 3.8
 
@@ -36,11 +36,11 @@ jobs:
 
     - name: Run tests
       run: |
-        mkdir -p reports  # Ensure directory exists
+        mkdir -p reports
         pytest --maxfail=1 --disable-warnings --junitxml=reports/results.xml
 
     - name: Upload test results as artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4  # Corrected to v4 (latest)
       with:
         name: test-results
         path: ./reports
