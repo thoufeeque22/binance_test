@@ -23,9 +23,9 @@ jobs:
       with:
         python-version: 3.8  # Set the Python version to use
 
-    # Step 3: Cache Python dependencies (optional but recommended)
+    # Step 3: Cache Python dependencies (updated to v3)
     - name: Cache Python dependencies
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       with:
         path: ~/.cache/pip
         key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
